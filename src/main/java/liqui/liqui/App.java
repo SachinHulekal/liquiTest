@@ -30,6 +30,7 @@ public class App implements RequestHandler<Map<String, String>, Void> {
         try {
             LambdaLogger logger = context.getLogger();
             logger.log("EVENT TYPE: " + event.getClass());
+            Class.forName("org.postgresql.Driver");
             logger.log("Sachin it is wokring");
             Properties props = new Properties();
             InputStream fis = App.class.getClassLoader().getResourceAsStream("db.properties");
