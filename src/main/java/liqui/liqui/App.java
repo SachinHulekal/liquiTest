@@ -29,7 +29,6 @@ public class App implements RequestHandler<Map<String, String>, Void> {
     public Void handleRequest(Map<String, String> event, Context context) {
         try {
             LambdaLogger logger = context.getLogger();
-            Class.forName("org.postgresql.Driver");
             logger.log("EVENT TYPE: " + event.getClass());
             logger.log("Sachin it is wokring");
             Properties props = new Properties();
