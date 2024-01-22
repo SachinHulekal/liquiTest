@@ -30,7 +30,6 @@ public class App implements RequestHandler<Map<String, String>, Void> {
             LambdaLogger logger = context.getLogger();
             logger.log("EVENT TYPE: " + event.getClass());
             logger.log("Sachin it is wokring");
-            Class.forName("com.mysql.jdbc.Driver");
             Properties props = new Properties();
             InputStream fis = App.class.getClassLoader().getResourceAsStream("db.properties");
             props.load(fis);
