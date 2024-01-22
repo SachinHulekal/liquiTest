@@ -30,7 +30,7 @@ public class App implements RequestHandler<Map<String, String>, Void> {
             logger.log("EVENT TYPE: " + event.getClass());
             logger.log("Sachin it is wokring");
             Properties props = new Properties();
-            FileInputStream fis = new FileInputStream("C:/test/liquiTest/src/main/resources/db.properties");
+            FileInputStream fis = (FileInputStream) App.class.getClassLoader().getResourceAsStream("db.properties");
             props.load(fis);
             fis.close();
 
