@@ -6,6 +6,7 @@ package liqui.liqui;
  */
 
 import java.io.FileInputStream;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.Map;
@@ -30,7 +31,7 @@ public class App implements RequestHandler<Map<String, String>, Void> {
             logger.log("EVENT TYPE: " + event.getClass());
             logger.log("Sachin it is wokring");
             Properties props = new Properties();
-            FileInputStream fis = (FileInputStream) App.class.getClassLoader().getResourceAsStream("db.properties");
+            InputStream fis = App.class.getClassLoader().getResourceAsStream("db.properties");
             props.load(fis);
             fis.close();
 
